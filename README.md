@@ -80,7 +80,7 @@ You can access these endpoints by making HTTP requests to the Flask app. You can
 
 ## Contributing
 
-If you would like to contribute to this demo app or report issues, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+If you would like to contribute to this demo app or report issues, please contact our development team at dev@ecourtdate.com.
 
 ## License
 
