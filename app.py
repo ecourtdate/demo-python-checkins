@@ -6,9 +6,9 @@ import os
 app = Flask(__name__)
 
 # Configuration for the API
-API_URL = os.getenv('API_URL')
-API_CLIENT = os.getenv('API_CLIENT')
-API_SECRET = os.getenv('API_SECRET')
+API_URL = os.getenv('ECDAPI_URL')
+API_CLIENT = os.getenv('ECDAPI_CLIENT')
+API_SECRET = os.getenv('ECDAPI_SECRET')
 
 @app.route('/checkin', methods=['POST'])
 def checkin():
