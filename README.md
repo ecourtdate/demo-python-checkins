@@ -1,12 +1,12 @@
 # Sample Flask Python Check-in App integrated with eCourtDate API
 
-This README provides instructions and information about a sample Flask Check-in application written in Python that demonstrates how to integrate with the [eCourtDate API](https://docs.ecourtdate.com). This sample code will showcase how to use the API to perform the following actions:
+This README provides instructions and information about a sample Flask Check-in application written in Python that demonstrates how to use the [eCourtDate API](https://docs.ecourtdate.com) to check in visitors to a location. Check-ins can be performed by searching for a client based on a phone number or email address or as a guest based on provided information.
 
-1. Search for an existing client.
-2. Retrieve any scheduled events for the client.
-3. Check-in the client for a given event.
-4. Update the check-in status for the event.
-5. Trigger one-off messages to any recipients.
+Depending on the eCourtDate agency's [Auto Messages](https://staging.ecourtdate.com/auto_messages), the eCourtDate API can be configured to automatically send omnichannel (SMS, MMS, email, voice, chat) and multilingual messages to the client, guest, and staff members. 
+
+The messages can be customized to include the location's name, address, and other information.
+
+To avoid sending live messages when developing, we recommend using the [staging API](https://devs.ecourtdate.com) where all outbound messages are simulated and not sent to the recipient.
 
 ## Table of Contents
 
