@@ -6,7 +6,7 @@ Depending on the eCourtDate agency's [Auto Messages](https://staging.ecourtdate.
 
 The messages can be customized to include the location's name, address, and other information.
 
-To avoid sending live messages when developing, we recommend using the [staging API](https://devs.ecourtdate.com) where all outbound messages are simulated and not sent to the recipient.
+To avoid sending live messages when developing, we recommend using the [staging API](https://devs.ecourtdate.com); where all outbound messages are simulated and not sent to the recipient.
 
 ## Table of Contents
 
