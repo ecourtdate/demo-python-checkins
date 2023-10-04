@@ -27,7 +27,7 @@ Before you can run the sample app, make sure you have the following prerequisite
 - Flask: You can install Flask using pip:
 
 ```bash
-pip install flask
+pip install -r requirements.txt
 ```
 
 ## Getting Started
