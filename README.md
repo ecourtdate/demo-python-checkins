@@ -46,17 +46,26 @@ git clone https://github.com/ecourtdate/demo-python-checkins.git
 cd demo-python-checkins
 ```
 
+3. From there we recommend creating a [virtualenv](https://docs.python.org/3/library/venv.html) and activating it to avoid installing dependencies globally on your computer.
+
+   `virtualenv -p python3 env`
+   `source env/bin/activate`
+
+4. Install dependencies:
+
+   `pip install -r requirements.txt`
+
 ### Configuration
 
-You need to configure the Sample API endpoints and authentication details. Create a `.env` file in the project directory with the following content:
+You need to configure the eCourtDate API endpoints and authentication details. Create a `.env` file in the project directory with the following content:
 
 ```ini
-API_BASE_URL=https://api.sampleapp.com
-API_CLIENT=client_id
-API_TOKEN=client_token
+ECDAPI_URL=https://staging.api.ecourtdate.com/
+ECDAPI_CLIENT=client_id
+ECDAPI_SECRET=client_secret`
 ```
 
-Replace `client_id` and `client_token` with your API credentials from the [Console APIs](https://console.ecourtdate.com/apis) page.
+Replace `client_id` and `client_secret` with your API credentials from the [Console APIs](https://console.ecourtdate.com/apis) page.
 
 ## Usage
 
@@ -66,15 +75,15 @@ To run the sample app, execute the following command from the project directory:
 python app.py
 ```
 
-This will start the Flask development server, and you should see output indicating that the server is running. By default, the app will be accessible at `http://localhost:5000` in your web browser.
+This will start the Flask development server, and you should see output indicating that the server is running. Open the app in an API client like [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). The app will be accessible at `http://localhost:5000` by default.
 
 ## API Integration
 
-The demo app provides the following endpoints for interacting with the Sample API:
+The app demonstrates the following endpoints to check in a visitor to a location:
 
-- `/search`: Search for an existing client.
-- `/check-in`: Check-in a client.
-- `/notify`: Send a one-off message.
+- `/contacts`: Use the [Get Contacts](https://docs.ecourtdate.com/#tag/Contacts/operation/GetContacts) endpoint for a client based on a given phone number or email address.
+- `/events`: If a client is found, use the [Get Events](https://docs.ecourtdate.com/#tag/Events/operation/GetEvents) endpoint to search if there are any current events.
+- `/checkins`: Use the [Post Checkins](https://docs.ecourtdate.com/#tag/Checkins/operation/PostCheckins) endpoint to create a check in.
 
 You can access these endpoints by making HTTP requests to the Flask app. You can use tools like `curl`, Postman, or create a frontend application to interact with the API endpoints.
 

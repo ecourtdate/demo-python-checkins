@@ -29,7 +29,7 @@ def checkin():
 
     event = get_event(headers, contact)
 
-    response = checkin_event(headers, data, event)
+    response = checkin_event(headers, set_checkin(data, contact, event))
 
     if response is None:
         return jsonify({"error": "Unable to check-in the visitor"}), 400
@@ -111,15 +111,15 @@ def set_event_params(contact):
         "to_date": (now + timedelta(days=1)).strftime("%Y-%m-%d")
     }
 
-def checkin_event(headers, data, event):
+def checkin_event(headers, json):
 
     # Post request to check-in the visitor
-    response = post_request("checkins", headers, set_checkin(data, event))
+    response = post_request("checkins", headers, json)
 
     return response
 
 
-def set_checkin(data, event):
+def set_checkin(data, contact, event):
 
     json = {
        "name": data.get('name'),
@@ -133,8 +133,11 @@ def set_checkin(data, event):
        "status": "checked-in"
     }
 
-    if event['uuid'] is not None:
+    if event is not None and event['uuid'] is not None:
         json['event'] = event['uuid']
+
+    if contact is not None and contact['client'] is not None:
+        json['client'] = contact['client']
 
     return json
 
