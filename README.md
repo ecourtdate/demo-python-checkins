@@ -62,7 +62,7 @@ You need to configure the eCourtDate API endpoints and authentication details. C
 ```ini
 ECDAPI_URL=https://staging.api.ecourtdate.com/
 ECDAPI_CLIENT=client_id
-ECDAPI_SECRET=client_secret`
+ECDAPI_SECRET=client_secret
 ```
 
 Replace `client_id` and `client_secret` with your API credentials from the [Console APIs](https://console.ecourtdate.com/apis) page.
